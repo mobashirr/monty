@@ -7,11 +7,11 @@
 int push(int element)
 {
 	stack_t *new = NULL;
-	int len;
+	int len = 0;
 
 	new = malloc(sizeof(stack_t));
 
-	if (!new)
+	if (new == NULL)
 	{
 		len = strlen("memory problem");
 		write(STDERR_FILENO, "memory problem", len);
@@ -20,6 +20,8 @@ int push(int element)
 	else
 	{
 		new->n = element;
+		new->prev = NULL;
+		new->next = NULL;
 
 		if (linked == NULL)
 		{
@@ -61,7 +63,7 @@ int pall(void)
 */
 int pint(void)
 {
-	int len;
+	int len = 0;
 
 	if (linked)
 	{
@@ -82,7 +84,7 @@ int pint(void)
 int pop(void)
 {
 	stack_t *temp = NULL;
-	int len;
+	int len = 0;
 
 	if (linked)
 	{

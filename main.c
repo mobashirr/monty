@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *linked = NULL;
+stack_t *linked;
 
 int main(int argc, char *argv[])
 {

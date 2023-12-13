@@ -29,10 +29,10 @@ void free_linked(void)
 		{
 			if (linked->next)
 			{
-				linked = linked->next;
-				temp = linked->prev;
-				if (temp)
-					free(temp);
+				temp = linked->next;
+				free(linked);
+				linked = temp;
+				linked->prev = NULL;
 			}
 			else
 			{

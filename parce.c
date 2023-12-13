@@ -73,7 +73,7 @@ int check(char *order)
 */
 int excute(char **order)
 {
-	int i = 0, len;
+	int i = 0, len = 0;
 
 	if (order[1] != NULL)
 		i = atoi(order[1]);
