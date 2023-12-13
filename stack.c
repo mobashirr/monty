@@ -6,36 +6,31 @@
 */
 int push(int element)
 {
-	stack_t *new = NULL;
-	int len = 0;
+    stack_t *new = NULL;
 
-	new = malloc(sizeof(stack_t));
+    new = malloc(sizeof(stack_t));
 
-	if (new == NULL)
-	{
-		len = strlen("memory problem");
-		write(STDERR_FILENO, "memory problem", len);
-		return (EXIT_FAILURE);
-	}
-	else
-	{
-		new->n = element;
-		new->prev = NULL;
-		new->next = NULL;
+    if (new == NULL)
+    {
+        fprintf(stderr, "Memory problem\n");
+        return (EXIT_FAILURE);
+    }
+    else
+    {
+        new->n = element;
+        new->prev = NULL;
+        new->next = linked;
 
-		if (linked == NULL)
-		{
-			linked = new;
-		}
-		else
-		{
-			new->next = linked;
-			linked->prev = new;
-			linked = new;
-		}
-	}
-	return (0);
+        if (linked != NULL)
+        {
+            linked->prev = new;
+        }
+
+        linked = new;
+    }
+    return (0);
 }
+
 
 
 /**

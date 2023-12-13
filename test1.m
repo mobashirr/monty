@@ -1,4 +1,6 @@
 push 2
 push 3
-mul
+pall
+push 4
+push 5
 pall
