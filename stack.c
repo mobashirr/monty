@@ -63,16 +63,16 @@ int pall(void)
 */
 int pint(void)
 {
-	int len = 0;
+	static int i = 0;
 
+	++i;
 	if (linked)
 	{
 		printf("%d\n", linked->n);
 	}
 	else
 	{
-		len = strlen("L<1>: can't pint, stack empty");
-		write(STDERR_FILENO, "L<1>: can't pint, stack empty", len);
+		fprintf(stderr, "L<%i>: can't pint, stack empty", i);
 		return (EXIT_FAILURE);
 	}
 	return (0);
