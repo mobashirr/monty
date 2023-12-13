@@ -98,11 +98,10 @@ int divi()
 */
 int mul(void)
 {
-    int i;
-
-    if (linked && linked->next)
+    if (linked && linked->next) 
     {
-        i = linked->n;
+        int i = linked->n;
+
         linked = linked->next;
 
         linked->n = linked->n * i;
@@ -110,15 +109,13 @@ int mul(void)
         linked->prev->next = NULL;
         free(linked->prev);
 
+
         linked->prev = NULL;
 
         return 0;
-    }
-    else
+    } else
     {
-        fprintf(stderr, "L<line_number>: can't mul, stack too short");
-        return (EXIT_FAILURE);
+        fprintf(stderr, "L<line_number>: can't mul, stack too short\n");
+        return(EXIT_FAILURE);
     }
-
-    return (1);
 }
