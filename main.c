@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 				}
 			}
 		}
+		free_linked();
+		free(buf);
 		fclose(file);
 	}
 	return (0);

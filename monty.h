@@ -54,6 +54,7 @@ int check(char *order);
 char **parse(char *line);
 int excute(char **order);
 void free_arr(char **arr);
+void free_linked(void);
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
