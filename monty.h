@@ -52,6 +52,7 @@ int pop ();
 int swap();
 int add();
 int sub();
+int divi();
 
 int check(char *order);
 char **parse(char *line);
