@@ -3,7 +3,7 @@
 char **parse(char *line)
 {
 	int len = 0, cap = ARGBUF;
-	char *token = NULL, **tokens = NULL;
+	char *token = NULL, **tokens;
 
 	tokens = malloc(cap * sizeof(char *));
 	if (!tokens)
