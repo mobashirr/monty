@@ -85,7 +85,7 @@ int divi()
     }
     else
     {
-        fprintf(stderr, "L<line_number>: can't sub, stack too short");
+        fprintf(stderr, "L<line_number>: can't div, stack too short");
         return (EXIT_FAILURE);
     }
 
