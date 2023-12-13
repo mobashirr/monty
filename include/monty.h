@@ -55,6 +55,5 @@ char **parse(char *line);
 int excute(char **order);
 void free_arr(char **arr);
 
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif
