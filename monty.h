@@ -50,6 +50,7 @@ int pall();
 int pint();
 int pop ();
 int swap();
+int add();
 
 int check(char *order);
 char **parse(char *line);

@@ -30,7 +30,6 @@ int push(int element)
 		else
 		{
 			new->next = linked;
-			new->prev = NULL;
 			linked->prev = new;
 			linked = new;
 		}
@@ -44,16 +43,16 @@ int push(int element)
 */
 int pall(void)
 {
-	stack_t *temp = NULL;
-
-	temp = linked;
+	stack_t *temp = linked;
 
 	while (temp)
 	{
 		printf("%d\n", temp->n);
 
-		if (temp)
+		if (temp->next)
 			temp = temp->next;
+		else
+			break;
 	}
 	return (0);
 }
