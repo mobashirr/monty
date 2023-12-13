@@ -71,8 +71,8 @@ int pint(void)
 	}
 	else
 	{
-		len = strlen("L<line_number>: can't pint, stack empty");
-		write(STDERR_FILENO, "L<line_number>: can't pint, stack empty", len);
+		len = strlen("L<1>: can't pint, stack empty");
+		write(STDERR_FILENO, "L<1>: can't pint, stack empty", len);
 		return (EXIT_FAILURE);
 	}
 	return (0);

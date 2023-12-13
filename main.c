@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	char *buf = NULL;
 	char **tokens;
 	size_t len = 5;
-	int exit_stat = -1;
+	int exit_stat = 0;
 
 	if (argc == 2)
 	{
