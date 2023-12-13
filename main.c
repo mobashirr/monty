@@ -38,5 +38,5 @@ int main(int argc, char *argv[])
 		free(buf);
 		fclose(file);
 	}
-	return (exit_stat);
+	exit (exit_stat);
 }
