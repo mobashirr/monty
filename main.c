@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 			while (getline(&buf, &len, file) != -1)
 			{
 				tokens = parse(buf);
-				if (tokens)
+				if (tokens && buf)
 				{
 					excute(tokens);
 					free(tokens);

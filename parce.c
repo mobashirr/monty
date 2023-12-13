@@ -56,6 +56,8 @@ int check(char *order)
 
 	len = sizeof(arr) / sizeof(arr[0]);
 
+	if (!order)
+		return (-1);
 	for (i = 0; i < len; i++)
 	{
 		if (strcmp(arr[i], order) == 0)
