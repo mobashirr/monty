@@ -51,6 +51,7 @@ int pint();
 int pop ();
 int swap();
 int add();
+int sub();
 
 int check(char *order);
 char **parse(char *line);

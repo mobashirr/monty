@@ -43,25 +43,3 @@ int main(int argc, char *argv[])
 	}
 	exit (exit_stat);
 }
-
-
-/**
- * add - add top two elments of the stack
- * Return: 0 if success else 1
-*/
-int add(void)
-{
-	int i;
-
-	if (linked && linked->next)
-	{
-		i = linked->n + linked->next->n;
-		linked = linked->next;
-		linked->n = i;
-		free(linked->prev);
-		linked->prev = NULL;
-		return (0);
-	}
-	else
-		return (1);
-}
