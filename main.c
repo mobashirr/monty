@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include "monty.h"
 
 stack_t *linked;
@@ -9,7 +10,7 @@ int main(int argc, char *argv[])
 	char *buf = NULL;
 	char **tokens;
 	size_t len = 5;
-	int exit_stat = 1;
+	int exit_stat = -1;
 
 	if (argc == 2)
 	{
@@ -31,6 +32,8 @@ int main(int argc, char *argv[])
 				{
 					exit_stat = excute(tokens);
 					free(tokens);
+					if (exit_stat != 0)
+						break;
 				}
 			}
 		}
