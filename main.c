@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "header.h"
 
 stack_t *linked = NULL;
 
@@ -13,12 +13,13 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		file_name = argv[1];
-		file = fopen(file_name,"r");
+		file = fopen(file_name, "r");
 
 		if (!file)
 		{
-			perror("open error");
-			return 1;
+			len = strlen("opening error");
+			write(STDERR_FILENO, "opening error", len);
+			return (1);
 		}
 		else
 		{
@@ -35,5 +36,5 @@ int main(int argc, char *argv[])
 		fclose(file);
 
 	}
-	return 0;
+	return (0);
 }

@@ -1,11 +1,11 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
 #include <unistd.h>
+#include <stdio.h>
 
 #define LINEBUF 1024
 #define ARGBUF  64
