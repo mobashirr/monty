@@ -1,7 +1,6 @@
-push 1
 push 2
-pint
-push 2
-pint
+push 34
+pall
 push 3
-pint
+push 3e
+pall

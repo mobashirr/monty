@@ -74,14 +74,26 @@ int check(char *order)
 int excute(char **order)
 {
 	int i = 0, len = 0;
+	char *endptr = NULL;
+
+	if (!order)
+		return (EXIT_FAILURE);
 
 	if (order[1] != NULL)
+	{
+ 		strtol(order[1], &endptr, 10);
+		if (*endptr != '\0' && *endptr != '\n')
+		{
+			goto error;
+		}
 		i = atoi(order[1]);
+	}
 
 	if (strcmp(order[0], "push") == 0)
 	{
 		if (!order[1])
 		{
+error:
 			len = strlen("L<line_number>: usage: push integer");
 			write(STDERR_FILENO, "L<line_number>: usage: push integer", len);
 			return (EXIT_FAILURE);
