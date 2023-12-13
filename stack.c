@@ -38,15 +38,15 @@ void push(int element)
 /**
  * pall - print the content of stack
 */
-void pall()
+void pall(void)
 {
 	stack_t *temp = NULL;
-	
+
 	temp = linked;
 
 	while (temp)
 	{
-		printf("%d\n",temp->n);
+		printf("%d\n", temp->n);
 
 		if (temp)
 			temp = temp->next;
@@ -56,12 +56,13 @@ void pall()
 /**
  * pint - print the data at top of stack
 */
-void pint()
+void pint(void)
 {
 	int len;
+
 	if (linked)
 	{
-		printf("%d\n",linked->n);
+		printf("%d\n", linked->n);
 	}
 	else
 	{
@@ -70,7 +71,10 @@ void pint()
 	}
 }
 
-void pop()
+/**
+ * pop - remove last element of the stack
+*/
+void pop(void)
 {
 	stack_t *temp = NULL;
 	int len;
