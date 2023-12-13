@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 	char *buf = NULL;
 	char **tokens;
 	size_t len = 5;
+	int exit_stat = 1;
 
 	if (argc == 2)
 	{
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 				tokens = parse(buf);
 				if (tokens && buf)
 				{
-					excute(tokens);
+					exit_stat = excute(tokens);
 					free(tokens);
 				}
 			}
@@ -37,5 +38,5 @@ int main(int argc, char *argv[])
 		free(buf);
 		fclose(file);
 	}
-	return (0);
+	return (exit_stat);
 }

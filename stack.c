@@ -4,7 +4,7 @@
  * push - push value onto stack
  * @element: value will be added
 */
-void push(int element)
+int push(int element)
 {
 	stack_t *new = NULL;
 	int len;
@@ -15,6 +15,7 @@ void push(int element)
 	{
 		len = strlen("memory problem");
 		write(STDERR_FILENO, "memory problem", len);
+		return (EXIT_FAILURE);
 	}
 	else
 	{
@@ -32,13 +33,14 @@ void push(int element)
 			linked = new;
 		}
 	}
+	return (0);
 }
 
 
 /**
  * pall - print the content of stack
 */
-void pall(void)
+int pall(void)
 {
 	stack_t *temp = NULL;
 
@@ -51,12 +53,13 @@ void pall(void)
 		if (temp)
 			temp = temp->next;
 	}
+	return (0);
 }
 
 /**
  * pint - print the data at top of stack
 */
-void pint(void)
+int pint(void)
 {
 	int len;
 
@@ -68,13 +71,15 @@ void pint(void)
 	{
 		len = strlen("L<line_number>: can't pint, stack empty");
 		write(STDERR_FILENO, "L<line_number>: can't pint, stack empty", len);
+		return (EXIT_FAILURE);
 	}
+	return (0);
 }
 
 /**
  * pop - remove last element of the stack
 */
-void pop(void)
+int pop(void)
 {
 	stack_t *temp = NULL;
 	int len;
@@ -98,5 +103,31 @@ void pop(void)
 	{
 		len = strlen("L<line_number>: can't pop an empty stack");
 		write(STDERR_FILENO, "L<line_number>: can't pop an empty stack", len);
+		return (EXIT_FAILURE);
 	}
+	return (0);
+}
+
+/**
+ * swap - swap top two elments of the stack
+ * Return: 0 or exit_faliure
+*/
+int swap(void)
+{
+	int i, len;
+
+	if (linked && linked->next)
+	{
+		i = linked->n;
+		linked->n = linked->next->n;
+		linked->next->n = i;
+
+	}
+	else
+	{
+		len = strlen("L<line_number>: can't add, stack too short");
+		write(STDERR_FILENO, "L<line_number>: can't add, stack too short", len);
+		return (EXIT_FAILURE);
+	}
+	return (0);
 }

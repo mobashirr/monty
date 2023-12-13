@@ -45,10 +45,11 @@ typedef struct instruction_s
 
 extern stack_t *linked;
 
-void push(int);
-void pall();
-void pint();
-void pop ();
+int push(int);
+int pall();
+int pint();
+int pop ();
+int swap();
 
 int check(char *order);
 char **parse(char *line);

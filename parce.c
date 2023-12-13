@@ -51,7 +51,7 @@ char **parse(char *line)
  */
 int check(char *order)
 {
-	char *arr[4] = {"push", "pall", "pint", "pop"};
+	char *arr[5] = {"push", "pall", "pint", "pop", "swap"};
 	int i, len;
 
 	len = sizeof(arr) / sizeof(arr[0]);
@@ -86,18 +86,18 @@ int excute(char **order)
 			write(STDERR_FILENO, "L<line_number>: usage: push integer", len);
 			return (EXIT_FAILURE);
 		}
-		push(i);
+		return (push(i));
 	}
 	else if (strcmp(order[0], "pall") == 0)
 	{
-		pall();
+		return (pall());
 	}
 	else if (strcmp(order[0], "pint") == 0)
-		pint();
+		return (pint());
 	else if (strcmp(order[0], "pop") == 0)
-		pop();
-	else
-		printf("Default case or error handling\n");
+		return (pop());
+	else if (strcmp(order[0], "swap") == 0)
+		return (swap());
 
-	return (0);
+	return (1);
 }
