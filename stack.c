@@ -63,7 +63,7 @@ int pint(void)
 	}
 	else
 	{
-		fprintf(stderr, "L<%i>: can't pint, stack empty", line);
+		fprintf(stderr, "L%d: can't pint, stack empty", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);

@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 
 		if (!file)
 		{
-			len = strlen("opening error");
-			write(STDERR_FILENO, "opening error", len);
-			return (1);
+			len = strlen("Error: Can't open file");
+			write(STDERR_FILENO, "Error: Can't open file", len);
+			return (EXIT_FAILURE);
 		}
 		else
 		{
@@ -34,14 +34,22 @@ int main(int argc, char *argv[])
 				{
 					exit_stat = excute(tokens);
 					free(tokens);
-					if (exit_stat != 0)
-						break;
+				}
+				else
+				{
+					exit_stat = EXIT_FAILURE;
+					break;
 				}
 			}
 		}
 		free_linked();
 		free(buf);
 		fclose(file);
+	}
+	else
+	{
+		fprintf(stderr, "USAGE: monty file");
+		exit (EXIT_FAILURE);
 	}
 	exit (exit_stat);
 }

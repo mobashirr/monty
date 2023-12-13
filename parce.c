@@ -5,7 +5,7 @@
  * @line: line
  * Return: arr of ptr
 */
-char **parse(char *line)
+char **parse(char *command)
 {
 	int len = 0, cap = ARGBUF;
 	char *token = NULL, **tokens;
@@ -16,10 +16,11 @@ char **parse(char *line)
 		fprintf(stderr, "tokenatioan failed");
 		return (NULL);
 	}
-	token = strtok(line, DELIMIT);
+	token = strtok(command, DELIMIT);
 
 	if (check(token) == -1)
 	{
+		fprintf(stderr, "L%d: unknown instruction %s", line, token);
 		return (NULL);
 	}
 
