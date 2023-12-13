@@ -51,9 +51,9 @@ char **parse(char *line)
  */
 int check(char *order)
 {
-	char *arr[9] = {"push", "pall", "pint",
+	char *arr[10] = {"push", "pall", "pint",
 					 "pop", "swap", "add", "nop",
-					 "sub", "div"};
+					 "sub", "div", "mul"};
 	int i = 0, len =0;
 
 	len = sizeof(arr) / sizeof(arr[0]);
@@ -111,6 +111,7 @@ int excute(char **order)
 		return (sub());
 	else if (strcmp(order[0], "div") == 0)
 		return (divi());
-
+	else if (strcmp(order[0], "mul") == 0)
+		return (mul());
 	return (1);
 }

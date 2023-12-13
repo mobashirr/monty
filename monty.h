@@ -53,6 +53,7 @@ int swap();
 int add();
 int sub();
 int divi();
+int mul();
 
 int check(char *order);
 char **parse(char *line);

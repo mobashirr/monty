@@ -92,3 +92,33 @@ int divi()
     return (1);
 }
 
+/**
+ * add - mull top two elments of the stack
+ * Return: 0 if success else 1
+*/
+int mul(void)
+{
+    int i;
+
+    if (linked && linked->next)
+    {
+        i = linked->n;
+        linked = linked->next;
+
+        linked->n = linked->n * i;
+
+        linked->prev->next = NULL;
+        free(linked->prev);
+
+        linked->prev = NULL;
+
+        return 0;
+    }
+    else
+    {
+        fprintf(stderr, "L<line_number>: can't mul, stack too short");
+        return (EXIT_FAILURE);
+    }
+
+    return (1);
+}
