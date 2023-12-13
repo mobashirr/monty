@@ -2,6 +2,7 @@
 #include "monty.h"
 
 stack_t *linked;
+int line = 0;
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
 		{
 			while (getline(&buf, &len, file) != -1)
 			{
+				++line;
 				tokens = parse(buf);
 				if (tokens && buf)
 				{

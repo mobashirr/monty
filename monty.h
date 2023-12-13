@@ -44,6 +44,7 @@ typedef struct instruction_s
 
 
 extern stack_t *linked;
+extern int line;
 
 int push(int);
 int pall();

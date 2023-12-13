@@ -13,8 +13,7 @@ char **parse(char *line)
 	tokens = malloc(cap * sizeof(char *));
 	if (!tokens)
 	{
-		len = strlen("tokenatioan failed");
-		write(STDERR_FILENO, "tokenatioan failed", len);
+		fprintf(stderr, "tokenatioan failed");
 		return (NULL);
 	}
 	token = strtok(line, DELIMIT);
@@ -33,8 +32,7 @@ char **parse(char *line)
 			tokens = realloc(tokens, cap * sizeof(char *));
 			if (!tokens)
 			{
-				len = strlen("tokenatioan failed at mid");
-				write(STDERR_FILENO, "tokenatioan failed at mid", len);
+				fprintf(stderr, "tokenatioan failed at mid");
 				return (NULL);
 			}
 		}
@@ -75,7 +73,7 @@ int check(char *order)
 */
 int excute(char **order)
 {
-	int i = 0, len = 0;
+	int i = 0;
 
 	if (!order)
 		return (EXIT_FAILURE);
@@ -89,8 +87,7 @@ int excute(char **order)
 	{
 		if (!order[1])
 		{
-			len = strlen("L<line_number>: usage: push integer");
-			write(STDERR_FILENO, "L<line_number>: usage: push integer", len);
+			fprintf(stderr, "L<%d>: usage: push integer", line);
 			return (EXIT_FAILURE);
 		}
 		return (push(i));

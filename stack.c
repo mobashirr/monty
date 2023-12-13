@@ -57,16 +57,13 @@ int pall(void)
 */
 int pint(void)
 {
-	static int i = 0;
-
-	++i;
 	if (linked)
 	{
 		printf("%d\n", linked->n);
 	}
 	else
 	{
-		fprintf(stderr, "L<%i>: can't pint, stack empty", i);
+		fprintf(stderr, "L<%i>: can't pint, stack empty", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
@@ -78,7 +75,6 @@ int pint(void)
 int pop(void)
 {
 	stack_t *temp = NULL;
-	int len = 0;
 
 	if (linked)
 	{
@@ -97,8 +93,7 @@ int pop(void)
 	}
 	else
 	{
-		len = strlen("L<line_number>: can't pop an empty stack");
-		write(STDERR_FILENO, "L<line_number>: can't pop an empty stack", len);
+		fprintf(stderr, "L<%d>: can't pop an empty stack", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
@@ -110,7 +105,7 @@ int pop(void)
 */
 int swap(void)
 {
-	int i, len;
+	int i;
 
 	if (linked && linked->next)
 	{
@@ -121,8 +116,7 @@ int swap(void)
 	}
 	else
 	{
-		len = strlen("L<line_number>: can't add, stack too short");
-		write(STDERR_FILENO, "L<line_number>: can't add, stack too short", len);
+		fprintf(stderr, "L<%d>: can't add, stack too short", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
