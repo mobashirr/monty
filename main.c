@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *linked = 0;
+stack_t *linked = NULL;
 
 int main(int argc, char *argv[])
 {
@@ -28,11 +28,10 @@ int main(int argc, char *argv[])
 				if (tokens)
 				{
 					excute(tokens);
-					free_arr(tokens);
+					free(tokens);
 				}
 			}
 		}
-		free(buf);
 		fclose(file);
 
 	}

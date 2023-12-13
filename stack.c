@@ -2,41 +2,43 @@
 
 /**
  * push - push value onto stack
- * @elment: value will be added
+ * @element: value will be added
 */
-void push(int elment)
+void push(int element)
 {
-	stack_t *new = NULL;
+    stack_t *new = NULL;
 
-	new = malloc(sizeof(stack_t));
+    new = malloc(sizeof(stack_t));
 
-	if (!new)
-		fprintf(stderr,"memory problem");
-	else
-	{
-		new->n = elment;
+    if (!new)
+        fprintf(stderr, "memory problem");
+    else
+    {
+        new->n = element;
 
-		if (!linked)
-		{
-			linked = new;
-		}
-		else
-		{
-			new->next = linked;
-			new->prev = NULL;
-			linked->prev = new;
-			linked = new;
-			/* printf("linked = %d && linked->next = %d\n",linked->n,linked->next->n); */
-		}
-	}
+        if (linked == NULL)
+        {
+            linked = new;
+        }
+        else
+        {
+            new->next = linked;
+            new->prev = NULL;
+            linked->prev = new;
+            linked = new;
+        }
+    }
 }
+
 
 /**
  * pall - print the content of stack
 */
 void pall()
 {
-	stack_t *temp = linked;
+	stack_t *temp = NULL;
+	
+	temp = linked;
 
 	while (temp)
 	{
@@ -60,25 +62,25 @@ void pint()
 		fprintf(stderr, "L<line_number>: can't pint, stack empty");
 }
 
-void pop ()
+void pop()
 {
-	stack_t *temp = NULL;
+    stack_t *temp = NULL;
 
-	if (linked)
-	{
-		if(!linked->next)
-		{
-			free(linked);
-			linked = NULL;
-		}
-		else
-		{
-			linked = linked->next;
-			temp = linked->prev;
-			free(temp);
-		}
-
-	}
-	else
-		fprintf(stderr, "L<line_number>: can't pop an empty stack");
+    if (linked)
+    {
+        if (!linked->next)
+        {
+            free(linked);
+            linked = NULL;
+        }
+        else
+        {
+            linked = linked->next;
+            temp = linked->prev;
+            linked->prev = NULL;
+            free(temp);
+        }
+    }
+    else
+        fprintf(stderr, "L<line_number>: can't pop an empty stack");
 }

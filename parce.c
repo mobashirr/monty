@@ -54,7 +54,8 @@ int check(char *order)
 
 int excute(char **order)
 {
-	int i;
+	int i = 0;
+
 	if(order[1] != NULL)
 		i = atoi(order[1]);
 
@@ -62,18 +63,18 @@ int excute(char **order)
 	{
 		if (!order[1])
 		{
-				fprintf(stderr,"L<line_number>: usage: push integer");
-				return (EXIT_FAILURE);
+			fprintf(stderr,"L<line_number>: usage: push integer");
+			return (EXIT_FAILURE);
 		}
-	   		push(i);
+	   	push(i);
 	}
 	else if (strcmp(order[0], "pall") == 0)
 	{
 		pall();
 	}
-	else if (strcmp(order[0],"pint") == 0)
+	else if (strcmp(order[0], "pint") == 0)
 		pint();
-	else if(strcmp(order[0],"pop") == 0)
+	else if(strcmp(order[0], "pop") == 0)
 		pop();
 	else
 		printf("Default case or error handling\n");
