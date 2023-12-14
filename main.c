@@ -25,8 +25,7 @@ int main(int argc, char *argv[])
 
 		if (!file)
 		{
-			len = strlen("Error: Can't open file");
-			write(STDERR_FILENO, "Error: Can't open file", len);
+			fprintf(stderr, "Error: Can't open file\n");
 			return (EXIT_FAILURE);
 		}
 		else
@@ -48,7 +47,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		fprintf(stderr, "USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	exit(exit_stat);
