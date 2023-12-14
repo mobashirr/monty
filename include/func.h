@@ -25,6 +25,7 @@ int mod();
 
 int pchar();
 int pstr();
+int rotl();
 
 int check(char *order);
 char **parse(char *line);

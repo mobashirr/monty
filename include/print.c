@@ -47,3 +47,28 @@ int pstr(void)
     printf("\n");
     return (0);
 }
+
+int rotl()
+{
+    stack_t *temp;
+
+    if (!linked || !linked->next)
+    {
+        return 0;
+    }
+
+    temp = linked;
+    linked = linked->next;
+ 
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = linked->prev;
+    linked->prev->prev = temp;
+    linked->prev->next = NULL;
+    linked->prev = NULL;
+
+    return 0;
+}
