@@ -28,18 +28,14 @@ int main(int argc, char *argv[])
 		{
 			while (getline(&buf, &len, file) != -1)
 			{
-				++line;
+				line += 1;
 				tokens = parse(buf);
 				if (tokens && buf)
 				{
 					exit_stat = excute(tokens);
 					free(tokens);
 				}
-				else
-				{
-					exit_stat = EXIT_FAILURE;
-					break;
-				}
+
 			}
 		}
 		free_linked();

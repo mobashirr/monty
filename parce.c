@@ -18,11 +18,13 @@ char **parse(char *command)
 	}
 	token = strtok(command, DELIMIT);
 
-	if (check(token) == -1)
+	if (check(token) == -1 && token)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s", line, token);
 		return (NULL);
 	}
+	else if (check(token) == -2)
+		return (NULL);
 
 	while (token)
 	{
@@ -58,7 +60,7 @@ int check(char *order)
 	len = sizeof(arr) / sizeof(arr[0]);
 
 	if (!order)
-		return (-1);
+		return (-2);
 	for (i = 0; i < len; i++)
 	{
 		if (strcmp(arr[i], order) == 0)
@@ -74,21 +76,27 @@ int check(char *order)
 */
 int excute(char **order)
 {
-	int i = 0;
+	int i = -320;
+    char *endptr = NULL;
 
 	if (!order)
 		return (EXIT_FAILURE);
 
 	if (order[1] != NULL)
 	{
-		i = atoi(order[1]);
+		strtol(order[1], &endptr, 10);
+		if(*endptr == '\0')
+			i = atoi(order[1]);
+		else if (strcmp(order[0], "push") == 0)
+			goto erorr;
 	}
 
 	if (strcmp(order[0], "push") == 0)
 	{
-		if (!order[1])
+		if (!order[1] || i == -320)
 		{
-			fprintf(stderr, "L<%d>: usage: push integer", line);
+erorr:
+			fprintf(stderr, "L%d: usage: push integer\n", line);
 			return (EXIT_FAILURE);
 		}
 		return (push(i));
