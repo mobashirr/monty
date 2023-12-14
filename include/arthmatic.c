@@ -117,7 +117,7 @@ int mul(void)
         return 0;
     } else
     {
-        fprintf(stderr, "L<line_number>: can't mul, stack too short\n");
+        fprintf(stderr, "L%d: can't mul, stack too short\n", line);
         return(EXIT_FAILURE);
     }
 }
