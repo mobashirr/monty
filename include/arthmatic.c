@@ -72,8 +72,8 @@ int divi()
 
         if (i == 0)
         {
-        fprintf(stderr, "L<line_number>: division by zero");
-        return (EXIT_FAILURE); 
+        fprintf(stderr, "L%d: division by zero\n", line);
+        return (EXIT_FAILURE);
         }
         linked = linked->next;
 
@@ -88,10 +88,9 @@ int divi()
     }
     else
     {
-        fprintf(stderr, "L<line_number>: can't div, stack too short");
+        fprintf(stderr, "L%d: can't div, stack too short\n", line);
         return (EXIT_FAILURE);
     }
-
     return (1);
 }
 
