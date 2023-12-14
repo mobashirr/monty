@@ -19,7 +19,10 @@ int add(void)
 		return (0);
 	}
 	else
-		return (1);
+    {
+        fprintf(stderr, "L%d: can't add, stack too short\n", line);
+		return (EXIT_FAILURE);
+    }
 }
 
 /**
