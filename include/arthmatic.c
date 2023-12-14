@@ -152,7 +152,7 @@ int mod(void)
     }
     else
     {
-        fprintf(stderr, "L%d: can't div, stack too short\n", line);
+        fprintf(stderr, "L%d: can't mod, stack too short\n", line);
         return (EXIT_FAILURE);
     }
     return (1);
