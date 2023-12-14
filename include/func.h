@@ -16,10 +16,12 @@ int pall();
 int pint();
 int pop ();
 int swap();
+
 int add();
 int sub();
 int divi();
 int mul();
+int mod();
 
 int pchar();
 int pstr();

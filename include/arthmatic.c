@@ -121,3 +121,39 @@ int mul(void)
         return(EXIT_FAILURE);
     }
 }
+
+/**
+ * mod - remainder of devide top two elments of the stack
+ * Return: 0 if success else 1
+*/
+int mod(void)
+{
+    int i = -1;
+
+    if (linked && linked->next)
+    {
+        i = linked->n;
+
+        if (i == 0)
+        {
+        fprintf(stderr, "L%d: division by zero\n", line);
+        return (EXIT_FAILURE);
+        }
+        linked = linked->next;
+
+        linked->n = linked->n % i;
+
+        linked->prev->next = NULL;
+        free(linked->prev);
+
+        linked->prev = NULL;
+
+        return 0;
+    }
+    else
+    {
+        fprintf(stderr, "L%d: can't div, stack too short\n", line);
+        return (EXIT_FAILURE);
+    }
+    return (1);
+}

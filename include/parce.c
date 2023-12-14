@@ -57,9 +57,9 @@ char **parse(char *command)
  */
 int check(char *order)
 {
-	char *arr[12] = {"push", "pall", "pint",
+	char *arr[13] = {"push", "pall", "pint",
 					 "pop", "swap", "add", "nop",
-					 "sub", "div", "mul",
+					 "sub", "div", "mul", "mod",
 					 "pchar", "pstr"	};
 	int i = 0, len =0;
 
@@ -129,5 +129,8 @@ erorr:
 		return (pchar());
 	else if (strcmp(order[0], "pstr") == 0)
 		return (pstr());
+	else if (strcmp(order[0], "mod") == 0)
+		return (mod());
+
 	return (1);
 }
