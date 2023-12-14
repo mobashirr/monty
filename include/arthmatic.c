@@ -50,7 +50,7 @@ int sub(void)
     }
     else
     {
-        fprintf(stderr, "L<line_number>: can't sub, stack too short");
+        fprintf(stderr, "L%d: can't sub, stack too short\n", line);
         return (EXIT_FAILURE);
     }
 
