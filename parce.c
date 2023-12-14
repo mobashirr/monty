@@ -13,7 +13,7 @@ char **parse(char *command)
 	tokens = malloc(cap * sizeof(char *));
 	if (!tokens)
 	{
-		fprintf(stderr, "tokenatioan failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		return (NULL);
 	}
 	token = strtok(command, DELIMIT);

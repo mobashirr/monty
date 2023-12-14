@@ -12,7 +12,7 @@ int push(int element)
 
     if (new == NULL)
     {
-        fprintf(stderr, "Memory problem\n");
+        fprintf(stderr, "Error: malloc failed\n");
         return (EXIT_FAILURE);
     }
     else
