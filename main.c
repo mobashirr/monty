@@ -4,12 +4,17 @@
 stack_t *linked;
 int line = 0;
 
+/**
+ * main - point entry
+ * @argc: count
+ * @argv: arguments
+ * Return: 0
+*/
 int main(int argc, char *argv[])
 {
 	const char *file_name;
 	FILE *file;
-	char *buf = NULL;
-	char **tokens;
+	char *buf = NULL, **tokens;
 	size_t len = 5;
 	int exit_stat = 0;
 
@@ -35,7 +40,6 @@ int main(int argc, char *argv[])
 					exit_stat = excute(tokens);
 					free(tokens);
 				}
-
 			}
 		}
 		free_linked();
@@ -45,7 +49,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		fprintf(stderr, "USAGE: monty file");
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
-	exit (exit_stat);
+	exit(exit_stat);
 }
