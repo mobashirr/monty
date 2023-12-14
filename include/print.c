@@ -19,3 +19,31 @@ int pchar(void)
     }
     return (0);
 }
+
+int pstr(void)
+{
+    stack_t *temp = NULL;
+
+    if (!linked)
+    {
+        printf("\n");
+        return (0);
+    }
+    temp = linked;
+
+    while (temp)
+    {
+        if (temp->n <= 0 || temp->n > 127)
+        {
+            break;
+        }
+        printf("%c", temp->n);
+
+        if (temp->next)
+            temp = temp->next;
+        else
+            break;
+    }
+    printf("\n");
+    return (0);
+}

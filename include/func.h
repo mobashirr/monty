@@ -22,6 +22,7 @@ int divi();
 int mul();
 
 int pchar();
+int pstr();
 
 int check(char *order);
 char **parse(char *line);
