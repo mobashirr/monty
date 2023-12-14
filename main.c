@@ -1,5 +1,5 @@
 #define _GNU_SOURCE
-#include "header.h"
+#include "monty.h"
 
 stack_t *linked;
 int line = 0;

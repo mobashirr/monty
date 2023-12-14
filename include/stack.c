@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "func.h"
 
 /**
  * push - push value onto stack

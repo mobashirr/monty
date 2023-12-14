@@ -1,16 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#include <stdlib.h>
-#include <string.h>
-#include <stddef.h>
-#include <unistd.h>
-#include <stdio.h>
-
 #define LINEBUF 1024
 #define ARGBUF  64
 #define DELIMIT " \t\n"
-
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,26 +35,10 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-extern stack_t *linked;
-extern int line;
-
-int push(int);
-int pall();
-int pint();
-int pop ();
-int swap();
-int add();
-int sub();
-int divi();
-int mul();
-
-int check(char *order);
-char **parse(char *line);
-int excute(char **order);
-void free_arr(char **arr);
-void free_linked(void);
-
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+#include "./include/func.h"
+#include "./include/arthmatic.c"
+#include "./include/free.c"
+#include "./include/parce.c"
+#include "./include/stack.c"
 
 #endif

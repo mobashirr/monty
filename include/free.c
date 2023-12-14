@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "func.h"
 
 /**
  * free_arr - free allocated memory for array
