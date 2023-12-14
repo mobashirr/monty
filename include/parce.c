@@ -19,7 +19,11 @@ char **parse(char *command)
 	token = strtok(command, DELIMIT);
 
 	if (check(token) == -2 || token[0] == '#')
+	{
+		if (tokens)
+			free(tokens);
 		return (NULL);
+	}
 	else if (check(token) == -1 && token)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
