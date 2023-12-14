@@ -63,7 +63,7 @@ int pint(void)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty", line);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
@@ -93,7 +93,7 @@ int pop(void)
 	}
 	else
 	{
-		fprintf(stderr, "L<%d>: can't pop an empty stack", line);
+		fprintf(stderr, "L<%d>: can't pop an empty stack\n", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
@@ -116,7 +116,7 @@ int swap(void)
 	}
 	else
 	{
-		fprintf(stderr, "L<%d>: can't add, stack too short", line);
+		fprintf(stderr, "L<%d>: can't add, stack too short\n", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);

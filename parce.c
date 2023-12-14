@@ -20,7 +20,7 @@ char **parse(char *command)
 
 	if (check(token) == -1 && token)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s", line, token);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
 		return (NULL);
 	}
 	else if (check(token) == -2)
