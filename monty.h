@@ -40,5 +40,6 @@ typedef struct instruction_s
 #include "./include/free.c"
 #include "./include/parce.c"
 #include "./include/stack.c"
+#include "./include/print.c"
 
 #endif

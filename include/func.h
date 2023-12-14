@@ -21,6 +21,8 @@ int sub();
 int divi();
 int mul();
 
+int pchar();
+
 int check(char *order);
 char **parse(char *line);
 int excute(char **order);

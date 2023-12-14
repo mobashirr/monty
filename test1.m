@@ -1,6 +1,2 @@
-#this comment
-push 2
-push 3
-add
-pall
-# done
+push -1
+pchar
