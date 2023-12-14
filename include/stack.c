@@ -116,7 +116,7 @@ int swap(void)
 	}
 	else
 	{
-		fprintf(stderr, "L<%d>: can't add, stack too short\n", line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		return (EXIT_FAILURE);
 	}
 	return (0);
